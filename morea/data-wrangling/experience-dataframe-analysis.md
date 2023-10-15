@@ -1,5 +1,5 @@
 ---
-title: "5. DataFrame Analysis"
+title: "5. Common Methods on Series or DataFrames"
 published: true
 morea_id: experience-dataframe-analysis
 morea_type: experience
@@ -10,7 +10,7 @@ morea_labels:
 morea_enable_toc: true
 ---
 
-# 5. DataFrame Analysis
+# 5. Common Methods on Series or DataFrames
 
 <div class="alert alert-success mt-3" role="alert" markdown="1">
 <i class="fa-solid fa-globe fa-xl"></i> **Overview**
@@ -27,8 +27,7 @@ morea_enable_toc: true
 * Learn how to sum two Pandas `DataFrame` columns together.
 </div>
 
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CI-TRACS/Data_Wrangling_with_Computational_Notebooks/HEAD)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 
 ## `DataFrame` Attributes & Arithmetic
 
@@ -323,6 +322,53 @@ More information about the `describe()` method can be found on the Pandas websit
 
 </div>
 
+### `Accessor` Methods
+
+When you have a `Series` containing specialized data types (like strings, datetime values, or categorical data), Pandas provides accessors to offer specialized methods for those data types. These are accessed as `series.accessor.method()` where `series` is a `Series` object. Here are the primary accessors and some of their methods:
+
+
+| Method|Description|
+|:----------|-----------|
+| `upper()`| Converts strings in the Series to uppercase. |
+| `lower()`| Converts strings in the Series to lowercase. |
+| `len()`| Computes the length of each string.|
+| `year`, `month`, `day`, `hour`| Returns the year, month, day and hour of the datetime.|
+|`categories`| Returns the categories of the Series. |
+| `ordered`| Checks if the categories have an order. |
+{: .table}  
+  
+For example, if we want to convert all the strings in our Series to uppercase, we would use the following command:
+
+<div class="alert alert-secondary" role="alert" markdown="1">
+
+###### Python
+
+~~~python
+pd.Series(['cat', 'dog', 'fish']).str.upper()
+~~~
+
+###### Output:
+
+~~~
+0      CAT
+1      DOG
+2      FISH
+dtype: object
+~~~
+
+</div>  
+
+<div class="alert alert-info" role="alert" markdown="1">
+<i class="fa-solid fa-circle-info fa-xl"></i> **For more information**
+<hr/>
+
+A full list of methods for `Accessor` can be found in the Pandas docs.  
+[String methods](https://pandas.pydata.org/pandas-docs/stable/user_guide/text.html)  
+[Datetime methods](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html)  
+[Categorical methods](https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html)
+
+
+</div>
 
 ## `DataFrame` Arithmetic
 
