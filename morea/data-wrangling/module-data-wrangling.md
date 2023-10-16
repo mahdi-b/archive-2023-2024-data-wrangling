@@ -14,6 +14,7 @@ morea_experiences:
   - experience-data-wrangling
   - experience-dataframe-analysis
   - experience-advanced-operations-on-dataframes
+  - experience-real-example-cleaning
   - experience-real-example-analysis
 morea_assessments:
   - assessment-data-wrangling-workshop
